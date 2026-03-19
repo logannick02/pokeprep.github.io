@@ -1,2 +1,2 @@
 # pokeprep.github.io
-Initial version of PokePrep
+This is the initial version of PokePrep (no React/Next.js)
