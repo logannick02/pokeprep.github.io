@@ -1,11 +1,16 @@
 * {
     margin: 0;
+    box-sizing: border-box;
+}
+
+input {
+    all: unset;
 }
 
 body {
     margin: 6px;
-    background: #1C1C1E;
-    color: white;
+    background: #303030;
+    color: #f5f5f5;
     font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: column;
@@ -40,15 +45,27 @@ main {
 }
 
 .gen-select li {
-    border: 2px solid gray;
+    border: 2px solid #505050;
+    padding: 4px 16px 4px 16px;
+    background: #2a2a2a;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.gen-select li:hover {
+    background: #3a3a3a;
+    color: #f5f5f5;
+}
+
+.gen-select li + li {
+    border-left: none;
 }
 
 .gen-select .left-edge {
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 8px 0px 0px 8px;
 }
 
 .gen-select .right-edge {
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 0px 8px 8px 0px;
 }
 
 .middle {
@@ -59,16 +76,85 @@ main {
     text-align: center;
 }
 
-.team-box {
+.team-area {
     margin: 12px;
     border: 2px solid gray;
-    border-radius: 4px;
+    border-radius: 8px;
     flex: 1;
+}
+
+.team {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.pokemon-card {
+    color: #f5f5f5;
+    /* background: #3a3a3a; */
+    border-radius: 8px;
+    margin: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.pokemon-card .left {
+    display: flex;
+    flex-direction: column;
+}
+
+.pokemon-card .right {
+    display: flex;
+    flex-direction: column;
+}
+
+.combobox {
+    position: relative; 
+}
+
+.combobox input {
+    width: 100%;
+    text-align: left;
+    border-bottom: 2px solid #505050;
+    padding-bottom: 6px;
+    transition: border-bottom 0.3s ease-in;
+}
+
+.combobox input:hover {
+    border-bottom: 2px solid #c5c5c5;
+}
+
+.combobox input:focus {
+    border-bottom: 2px solid #c5c5c5;
+}
+
+.options {
+    background: #3a3a3a;
+    margin-top: 6px;
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.options.hidden {
+    display: none;
+}
+
+.options li {
+    padding: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+}
+
+.options li:hover {
+    background: #2a2a2a;
 }
 
 .connector {
     margin: 12px;
     flex: 1;
     border: 2px solid gray;
-    border-radius: 4px;
+    border-radius: 8px;
 }
