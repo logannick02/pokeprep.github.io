@@ -60,11 +60,11 @@ main {
     border-left: none;
 }
 
-.gen-select .left-edge {
+.left-edge {
     border-radius: 8px 0px 0px 8px;
 }
 
-.gen-select .right-edge {
+.right-edge {
     border-radius: 0px 8px 8px 0px;
 }
 
@@ -73,40 +73,66 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 12px;
     text-align: center;
 }
 
 .team-area {
-    margin: 12px;
     border: 2px solid gray;
     border-radius: 8px;
     flex: 1;
+}
+
+.team-area ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+}
+
+.team-area li {
+    border: 2px solid #505050;
+    padding: 4px 16px 4px 16px;
+    background: #2a2a2a;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.team-area li:hover {
+    background: #3a3a3a;
+    color: #f5f5f5;
+}
+
+.team-area li + li {
+    border-left: none;
 }
 
 .team {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 0.75rem;
 }
 
 .pokemon-card {
     color: #f5f5f5;
-    /* background: #3a3a3a; */
+    background: #3a3a3a;
     border-radius: 8px;
-    margin: 12px;
+    margin: 8px;
     display: flex;
     gap: 12px;
+    padding: 12px;
+}
+
+.pokemon-card .left, .right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
 }
 
 .pokemon-card .left {
-    display: flex;
-    flex-direction: column;
-}
-
-.pokemon-card .right {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
 .combobox {
@@ -153,7 +179,6 @@ main {
 }
 
 .connector {
-    margin: 12px;
     flex: 1;
     border: 2px solid gray;
     border-radius: 8px;
